@@ -15,18 +15,22 @@ const Home = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <>
-            <div>
+            <div className="rainbow-p-horizontal_xx-large">
                 <FileSelector
-                    className="rainbow-m-vertical_x-large rainbow-p-horizontal_medium rainbow-m_auto"
+                    className="rainbow-m-vertical_x-large"
                     multiple
                     label="File selector multiple"
                     placeholder="Drag & Drop or Click to Browse"
                     bottomHelpText="Can select multiple files"
                 />
                 <br />
-                <Lookup label="lookup label" placeholder="Search..." />
+                <Lookup
+                    className="rainbow-m-vertical_x-large"
+                    label="lookup label"
+                    placeholder="Search..."
+                />
                 <br />
-                <ProgressIndicator currentStepName="step-3">
+                <ProgressIndicator currentStepName="step-3" className="rainbow-m-vertical_x-large">
                     <ProgressStep name="step-1" />
                     <ProgressStep name="step-2" />
                     <ProgressStep name="step-3" />
@@ -34,11 +38,11 @@ const Home = () => {
                     <ProgressStep name="step-5" />
                 </ProgressIndicator>
                 <br />
-                <Button label="Open Drawer" onClick={() => setIsOpen(true)}/>
+                <Button label="Open Drawer" onClick={() => setIsOpen(true)} />
                 <br />
             </div>
             <Drawer isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
-                <div className="rainbow-p-top_large" style={{ margin: '2rem -1rem 1rem', }}>
+                <div className="rainbow-p-top_large" style={{ margin: '2rem -1rem 1rem' }}>
                     <VerticalNavigation id="vertical-navigation-11" selectedItem="item-1">
                         <VerticalSectionOverflow
                             label="Recent Activity"
