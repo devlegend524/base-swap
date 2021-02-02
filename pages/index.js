@@ -1,28 +1,22 @@
-import { FileSelector, Lookup, ProgressIndicator, ProgressStep, Button } from 'react-rainbow-components';
+import { ExampleSection } from '../components';
+import {
+    CarouselCardExample,
+    DrawerExample,
+    InputsExample,
+    VerticalNavigationExample,
+} from '../examples';
 
 const Home = () => {
     return (
-        <>
-            <FileSelector
-                className="rainbow-m-vertical_x-large rainbow-p-horizontal_medium rainbow-m_auto"
-                multiple
-                label="File selector multiple"
-                placeholder="Drag & Drop or Click to Browse"
-                bottomHelpText="Can select multiple files"
+        <div className="rainbow-p-horizontal_xx-large">
+            <ExampleSection title="CarouselCard example" component={<CarouselCardExample />} />
+            <ExampleSection title="Drawer example" component={<DrawerExample />} />
+            <ExampleSection title="Forms example" component={<InputsExample />} />
+            <ExampleSection
+                title="VerticalNavigation example"
+                component={<VerticalNavigationExample />}
             />
-            <br/>
-            <Lookup label="lookup label" placeholder="Search..." />
-            <br/>
-            <ProgressIndicator currentStepName="step-3">
-                <ProgressStep name="step-1" />
-                <ProgressStep name="step-2" />
-                <ProgressStep name="step-3" />
-                <ProgressStep name="step-4" />
-                <ProgressStep name="step-5" />
-            </ProgressIndicator>
-            <br/>
-            <Button label="button" />
-        </>
+        </div>
     );
 };
 
